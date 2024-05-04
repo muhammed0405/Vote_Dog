@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom"
 
 const Header: React.FunctionComponent = () => {
 	return (
-		<div className="flex w-full  gap-8 items-center">
+		<div className="flex w-full border gap-8 items-center">
 			<NavLink
 				to="/random"
 				className={({ isActive }) =>

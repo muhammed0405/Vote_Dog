@@ -1,16 +1,15 @@
 /** @format */
 
-import { Route, Routes } from "react-router-dom"
+import { NavLink, Route, Routes } from "react-router-dom"
 import "./App.css"
 import ChooseBreed from "./Pages/ChooseBreed/ChooseBreed"
 import { LikedDogs } from "./Pages/LikedDogs/LikedDogs"
 import RandomImg from "./Pages/RandomImg/RandomImg"
 
-
 function App() {
 	return (
-		<div className="flex gap-10">
-			<div className="w-[400px] ">
+		<div className="flex gap-4 sm:gap-10 flex-wrap justify-center p-2 sm:p-1">
+			<div className="  p-3 max-w-[400px] sm:w-[400px] ">
 				<h1 className="text-lg font-bold text-blue-300 ">
 					Иттердин Жылдызына Добуш Бериңиз!
 				</h1>
@@ -22,6 +21,12 @@ function App() {
 					топтогон ит "Айдын Мыкты Ити" наамына ээ болот жана атайын сертификат
 					менен сыйлыктарга ээ болот.
 				</p>
+
+				<NavLink to="/random">
+					<button className="bg-orange-500 rounded-md p-2 mt-3">
+						Добуш берүү
+					</button>
+				</NavLink>
 
 				<div className="mt-10">
 					<h1 className="text-blue-300 text-lg font-bold my-4">

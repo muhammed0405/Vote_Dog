@@ -35,16 +35,16 @@ export default function ChooseImg() {
 
 	console.log("chosenBreed", chosenBreed)
 	return (
-		<div className="flex flex-col  w-[500px] h-[600px] border gap-4 borde bg-slate-600 border-white p-16">
-			<Header/>
-			<div className="w-96 relative">
+		<div className="flex flex-col w-full sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] h-auto sm:h-[600px] border gap-4 bg-slate-600 border-white p-4 sm:p-16">
+			<Header />
+			<div className="border w-full sm:w-[90%] relative">
 				<input
 					onFocus={() => setShowBreeds(true)}
-					onBlur={() =>
+					onBlur={() => {
 						setTimeout(() => {
 							setShowBreeds(false)
 						}, 200)
-					}
+					}}
 					className="w-full p-2 rounded-md"
 					type="search"
 					value={chosenBreed}
@@ -52,7 +52,7 @@ export default function ChooseImg() {
 					onChange={handleInputOnChange}
 				/>
 				{showBreeds && (
-					<div className="w-full max-h-96 flex flex-col gap-2 bg-gray-400 rounded-md overflow-auto absolute">
+					<div className="max-h-96 w-full flex flex-col gap-2 bg-gray-400 rounded-md overflow-auto absolute z-10">
 						{filteredOptions.map((el, idx) => (
 							<div
 								className="w-full transition-all duration-250 rounded-md p-1 hover:bg-slate-200 hover:text-black"
@@ -69,12 +69,12 @@ export default function ChooseImg() {
 			</div>
 			<button
 				onClick={() => searchDogs(chosenBreed)}
-				className="bg-orange-500 h-10 transition-all hover:scale-105 text-white font-bold py-2 px-4 rounded"
+				className="bg-orange-500 h-10 w-full transition-all hover:scale-105 text-white font-bold py-2 px-4 rounded"
 			>
 				Башка сүрөт
 			</button>
 			<img
-				className="w-96 h-96 grid place-items-center"
+				className="w-full h-auto sm:h-[600px] object-cover grid place-items-center"
 				src={dogsChosen.message}
 				alt="Иттин тукумун танда"
 			/>

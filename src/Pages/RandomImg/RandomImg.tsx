@@ -1,11 +1,8 @@
 /** @format */
 
 import { useEffect } from "react"
-import {
-	BiSolidDislike,
-	BiSolidLike,
-} from "react-icons/bi"
-import { FaRegHeart,  } from "react-icons/fa"
+import { BiSolidDislike, BiSolidLike } from "react-icons/bi"
+import { FaRegHeart } from "react-icons/fa"
 import { UseTypedDispatch } from "../../Redux/customHooks/useTypedDispatch"
 import { useTypedSelectorHook } from "../../Redux/customHooks/useTypedSelectorHook"
 import Header from "../../components/Header"
@@ -20,31 +17,30 @@ export default function RandomImg() {
 	}, [])
 
 	return (
-		<div className="flex w-[500px] h-[600px] flex-col gap-4 border bg-slate-600 border-white p-16 relative">
-			<Header/>
-			<h1>Итке добуш бериңиз</h1>
-			<img className="border w-96 h-96 " src={dogs.message} alt="" />
-
-			<div className="flex justify-between items-center absolute bottom-4 left-16 w-[370px] ">
+		<div className="flex flex-col gap-4 bg-slate-600 border border-white p-4 sm:p-8 md:p-16 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto relative">
+			<Header />
+			<h1 className="text-xl sm:text-2xl font-bold text-center text-white">
+				Итке добуш бериңиз
+			</h1>
+			<div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
+				<img className="object-cover" src={dogs.message} alt="" />
+			</div>
+			<div className="flex justify-between items-center absolute bottom-4 left-4 right-4 md:left-8 md:right-8">
 				<button
-					className="text-xl transition-all duration-300 hover:scale-110 hover:text-red-500"
-					onClick={() => {
-						addToLiked(dogs.message)
-					}}
+					className="text-2xl transition-all duration-300 hover:scale-110 hover:text-red-500"
+					onClick={() => addToLiked(dogs.message)}
 				>
 					<FaRegHeart />
 				</button>
-
-				<div className="w-36 flex justify-between ">
+				<div className="flex justify-between items-center space-x-2">
 					<button
-						className="bg-orange-500 text-xl h-10 transition-all  hover:scale-105 text-white font-bold py-2 px-4 rounded "
+						className="bg-orange-500 text-white text-xl h-10 w-10 md:w-auto px-4 transition-all hover:scale-105 font-bold rounded"
 						onClick={() => getDogs()}
 					>
 						<BiSolidLike />
 					</button>
-
 					<button
-						className="bg-red-500 text-xl h-10 transition-all hover:scale-105 text-white font-bold py-2 px-4 rounded "
+						className="bg-red-500 text-white text-xl h-10 w-10 md:w-auto px-4 transition-all hover:scale-105 font-bold rounded"
 						onClick={() => getDogs()}
 					>
 						<BiSolidDislike />
