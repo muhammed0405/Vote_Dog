@@ -2,15 +2,13 @@
 
 import { useEffect } from "react"
 import {
-	BiDownvote,
 	BiSolidDislike,
 	BiSolidLike,
-	BiUpvote,
 } from "react-icons/bi"
-import { FaRegHeart, FaSearch } from "react-icons/fa"
-import { NavLink } from "react-router-dom"
+import { FaRegHeart,  } from "react-icons/fa"
 import { UseTypedDispatch } from "../../Redux/customHooks/useTypedDispatch"
 import { useTypedSelectorHook } from "../../Redux/customHooks/useTypedSelectorHook"
+import Header from "../../components/Header"
 
 export default function RandomImg() {
 	const { getDogs, addToLiked } = UseTypedDispatch()
@@ -23,26 +21,14 @@ export default function RandomImg() {
 
 	return (
 		<div className="flex w-[500px] h-[600px] flex-col gap-4 border bg-slate-600 border-white p-16 relative">
-			<div className="flex w-full  gap-8 items-center">
-				<NavLink to="/random" className="flex">
-					<BiUpvote />
-					<BiDownvote />
-				</NavLink>
-				<NavLink to="/choose">
-					<FaSearch />
-				</NavLink>
-				<NavLink to="/liked_dogs">
-					<FaRegHeart />
-				</NavLink>
-			</div>
-			<h1>Итке добуш берүү</h1>
+			<Header/>
+			<h1>Итке добуш бериңиз</h1>
 			<img className="border w-96 h-96 " src={dogs.message} alt="" />
 
 			<div className="flex justify-between items-center absolute bottom-4 left-16 w-[370px] ">
 				<button
 					className="text-xl transition-all duration-300 hover:scale-110 hover:text-red-500"
 					onClick={() => {
-						getDogs()
 						addToLiked(dogs.message)
 					}}
 				>

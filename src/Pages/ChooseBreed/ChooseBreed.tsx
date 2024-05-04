@@ -3,9 +3,7 @@
 import { useEffect, useState } from "react"
 import { UseTypedDispatch } from "../../Redux/customHooks/useTypedDispatch"
 import { useTypedSelectorHook } from "../../Redux/customHooks/useTypedSelectorHook"
-import { NavLink } from "react-router-dom"
-import { BiDownvote,BiUpvote } from "react-icons/bi"
-import { FaRegHeart, FaSearch } from "react-icons/fa"
+import Header from "../../components/Header"
 
 export default function ChooseImg() {
 	const [chosenBreed, setChosenBreed] = useState<string>("")
@@ -27,6 +25,10 @@ export default function ChooseImg() {
 		setChosenBreed(e.target.value)
 	}
 
+	const handleDivCLick = (el: string) => {
+		setChosenBreed(el), searchDogs(el)
+	}
+
 	useEffect(() => {
 		getAllBreeds()
 	}, [getAllBreeds])
@@ -34,18 +36,7 @@ export default function ChooseImg() {
 	console.log("chosenBreed", chosenBreed)
 	return (
 		<div className="flex flex-col  w-[500px] h-[600px] border gap-4 borde bg-slate-600 border-white p-16">
-			<div className="flex w-full  gap-8 items-center">
-				<NavLink to="/random" className="flex">
-					<BiUpvote />
-					<BiDownvote />
-				</NavLink>
-				<NavLink to="/choose">
-					<FaSearch />
-				</NavLink>
-				<NavLink to="/liked_dogs">
-					<FaRegHeart />
-				</NavLink>
-			</div>
+			<Header/>
 			<div className="w-96 relative">
 				<input
 					onFocus={() => setShowBreeds(true)}
@@ -67,7 +58,7 @@ export default function ChooseImg() {
 								className="w-full transition-all duration-250 rounded-md p-1 hover:bg-slate-200 hover:text-black"
 								key={idx}
 								onClick={() => {
-									setChosenBreed(el), searchDogs(el)
+									handleDivCLick(el)
 								}}
 							>
 								{el}
