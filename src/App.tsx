@@ -9,7 +9,7 @@ import RandomImg from "./Pages/RandomImg/RandomImg"
 function App() {
 	return (
 		<div className="flex gap-4 sm:gap-10 flex-wrap justify-center p-2 sm:p-1">
-			<div className="  p-3 max-w-[400px] sm:w-[400px] ">
+			<div className=" mb-10 p-3 max-w-[400px] sm:w-[400px] ">
 				<h1 className="text-lg font-bold text-blue-300 ">
 					Иттердин Жылдызына Добуш Бериңиз!
 				</h1>
@@ -28,7 +28,7 @@ function App() {
 					</button>
 				</NavLink>
 
-				<div className="mt-10">
+				<div className="mt-10 flex flex-col items-center">
 					<h1 className="text-blue-300 text-lg font-bold my-4">
 						Өткөн айдын башкы жеңүүчүсү
 					</h1>

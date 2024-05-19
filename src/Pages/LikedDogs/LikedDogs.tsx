@@ -7,20 +7,26 @@ import Header from "../../components/Header"
 export const LikedDogs: FC = () => {
 	const likedDogs = useTypedSelectorHook(state => state.user.likedDogs)
 	return (
-		<div className="flex flex-col border bg-slate-600 border-white p-4 sm:p-8 md:p-16 w-full max-w-screen-lg mx-auto">
-  <Header />
-  <div className="grid w-full place-items-center overflow-auto">
-    {likedDogs.length > 0 ? (
-      <div className="w-full overflow-auto flex flex-wrap justify-center gap-3 p-4">
-        {likedDogs.map((el, index) => (
-          <img key={index} className="w-28 h-28 object-cover" src={el} alt={`Liked dog ${index}`} />
-        ))}
-      </div>
-    ) : (
-      <h1 className="text-xl text-white text-center mt-10">Сизде жактырган иттер тизмеси бош</h1>
-    )}
-  </div>
-</div>
-
+		<div className="flex flex-col gap-4 bg-slate-600 border border-white p-4 sm:p-8  w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto relative">
+			<Header />
+			<div className="grid  h-96 place-items-center overflow-auto">
+				{likedDogs.length > 0 ? (
+					<div className=" border-red-600 w-full overflow-auto flex flex-wrap justify-center gap-3 p-4">
+						{likedDogs.map((el, index) => (
+							<img
+								key={index}
+								className="w-28 h-28 object-cover"
+								src={el}
+								alt={`Liked dog ${index}`}
+							/>
+						))}
+					</div>
+				) : (
+					<h1 className="text-xl  text-white text-center mt-10">
+						Сиз жактырган иттердин сүрөтү жок
+					</h1>
+				)}
+			</div>
+		</div>
 	)
 }

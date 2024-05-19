@@ -17,13 +17,25 @@ export default function RandomImg() {
 	}, [])
 
 	return (
-		<div className="flex flex-col gap-4 bg-slate-600 border border-white p-4 sm:p-8 md:p-16 w-full max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto relative">
+		<div className="flex flex-col gap-4 bg-slate-600 border border-white p-4 sm:p-8 md:p-16 w-full h-[500px] max-w-sm sm:max-w-md lg:max-w-lg xl:max-w-xl mx-auto relative">
 			<Header />
 			<h1 className="text-xl sm:text-2xl font-bold text-center text-white">
 				Итке добуш бериңиз
 			</h1>
 			<div className="aspect-w-1 aspect-h-1 w-full overflow-hidden">
-				<img className="object-cover" src={dogs.message} alt="" />
+				<img
+					style={{
+						width: "300px",
+						height: "300px",
+						objectFit: "cover",
+						objectPosition: "center",
+					}}
+					width="300px"
+					height="300px"
+					className="object-cover"
+					src={dogs.message}
+					alt=""
+				/>
 			</div>
 			<div className="flex justify-between items-center absolute bottom-4 left-4 right-4 md:left-8 md:right-8">
 				<button
@@ -34,13 +46,17 @@ export default function RandomImg() {
 				</button>
 				<div className="flex justify-between items-center space-x-2">
 					<button
-						className="bg-orange-500 text-white text-xl h-10 w-10 md:w-auto px-4 transition-all hover:scale-105 font-bold rounded"
+						className=" bg-orange-500  text-white text-xl h-10 w-10  md:w-auto 
+						flex justify-center items-center 	
+						sm:px-4 transition-all  hover:scale-105 font-bold rounded"
 						onClick={() => getDogs()}
 					>
 						<BiSolidLike />
 					</button>
 					<button
-						className="bg-red-500 text-white text-xl h-10 w-10 md:w-auto px-4 transition-all hover:scale-105 font-bold rounded"
+						className="bg-red-500  text-white text-xl h-10 w-10  md:w-auto 
+						flex justify-center items-center 	
+						sm:px-4 transition-all  hover:scale-105 font-bold rounded"
 						onClick={() => getDogs()}
 					>
 						<BiSolidDislike />

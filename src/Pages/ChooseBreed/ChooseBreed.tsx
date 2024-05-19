@@ -35,7 +35,7 @@ export default function ChooseImg() {
 
 	console.log("chosenBreed", chosenBreed)
 	return (
-		<div className="flex flex-col w-full sm:w-[500px] md:w-[600px] lg:w-[700px] xl:w-[800px] h-auto sm:h-[600px] border gap-4 bg-slate-600 border-white p-4 sm:p-16">
+		<div className="flex flex-col 		 h-auto sm:h-[600px] border gap-4 bg-slate-600 border-white p-4 sm:p-16">
 			<Header />
 			<div className="border w-full sm:w-[90%] relative">
 				<input
@@ -74,9 +74,17 @@ export default function ChooseImg() {
 				Башка сүрөт
 			</button>
 			<img
-				className="w-full h-auto sm:h-[600px] object-cover grid place-items-center"
+				style={{
+					maxWidth: "300px",
+					maxHeight: "300px",
+					objectFit: "cover",
+					objectPosition: "center",
+				}}
+				width="300px"
+				height="300px"
+				className="object-cover"
 				src={dogsChosen.message}
-				alt="Иттин тукумун танда"
+				alt=""
 			/>
 		</div>
 	)
