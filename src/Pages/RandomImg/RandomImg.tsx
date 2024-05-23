@@ -27,7 +27,7 @@ export default function RandomImg() {
 					style={{
 						width: "300px",
 						height: "300px",
-						objectFit: "cover",
+						objectFit: "contain",
 						objectPosition: "center",
 					}}
 					width="300px"

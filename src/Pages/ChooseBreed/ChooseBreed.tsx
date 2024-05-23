@@ -67,17 +67,20 @@ export default function ChooseImg() {
 					</div>
 				)}
 			</div>
-			<button
-				onClick={() => searchDogs(chosenBreed)}
-				className="bg-orange-500 h-10 w-full transition-all hover:scale-105 text-white font-bold py-2 px-4 rounded"
-			>
-				Башка сүрөт
-			</button>
+			<div className=" w-full sm:w-[90%] relative">
+				<button
+					onClick={() => searchDogs(chosenBreed)}
+					className="w-full transition-all duration-550 rounded-md p-1 bg-orange-500 active:scale-105  "
+				>
+					Башка сүрөт
+				</button>
+			</div>
+
 			<img
 				style={{
-					maxWidth: "300px",
-					maxHeight: "300px",
-					objectFit: "cover",
+					width: "300px",
+					height: "300px",
+					objectFit: "contain",
 					objectPosition: "center",
 				}}
 				width="300px"
